@@ -1,0 +1,14 @@
+<?php
+/** @var $block \Magento\Framework\View\Element\Template */
+/**@var \Perspective\Test2\ViewModel\Products $viewModel*/
+
+$viewModel = $block->getData('view_model');
+?>
+<div>
+    <?php $products = $viewModel->getProductsFromCategory() ?>
+<?php foreach ($products as $key => $product) : ?>
+    <div><?php echo __("Name: ") . $product->getName() ?></div>
+    <div><?php echo __("SKU: ") . $product->getSku() ?></div>
+    <div><?php echo __("Price: ") . $product->getFinalPrice() ?></div>
+<?php endforeach;?>
+</div>
